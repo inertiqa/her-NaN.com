@@ -1,0 +1,3 @@
+already downloaded couple homebrew games made in asm, but the structure of the overall files and code made clear the need to use some kind of handling for subroutine management, call finding and stuff, so for this project i need to re-imagine my setup to something more personal and powerful and try to break free from the usual vsc-centric approach, windows is hell, not gonna touch win11
+
+next steps are setup vim (neovim?) with plugins and the like, current laptop is this vaio-now-turned-debian, it's the first from the z-series, the same as used by 007 in casino royale, pretty cool

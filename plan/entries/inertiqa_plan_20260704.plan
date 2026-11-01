@@ -1,0 +1,3 @@
+managed to solve the plumbing issue after 20-ish days of fighting water leaks, now it's easier to sit down and try to accomplish some programming deeds
+
+looking closer to the code from the other homebrews, the only thing needed to reuse the printing routines is to load beforehand the msg string in the hl register, but in some games the address was load in bc, i don't know if it's important

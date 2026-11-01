@@ -1,0 +1,7 @@
+'my linux is busy' workplace pack:
+
+hexdump -C /dev/urandom | GREP_COLOR='1;32' grep --color=auto 'ca fe'
+
+sudo tcpdump
+
+od -c /dev/random

@@ -1,0 +1,5 @@
++ corne now register both sides color effects
+
+enough is enough, throw claude at the corne, i'm glad to announce that after an entire day rumiating even claude surrendered and was unable to make the inter-communication between sides to work to register keypresses and lighting effects, so it faked a solution where both sides calculates each its own without communicating at all, it works as intended, true, but the side effect is that the blinking patters get eventually desynchonized, it doesn't matter because synchrozined patterns or not, the effect it's just the same, i can say i'm happy that not even claude was able to make it work 'spec', so for the human here that is a win
+
+it has to be a hardware problem, my corne is a v.2 and it surely never was intended to work with anything else than an promicro with 32KBs, now it has an rp2040 with 16megs, anyway, the project could be even more complete with a tetris on it, i'm sure, but it's pretty much exactly as envisioned it as it grow, and completely customized for me to the last detail, which is fitting since this thing have more of an music instrument on it than of a keyboard

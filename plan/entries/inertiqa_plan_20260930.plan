@@ -1,0 +1,15 @@
+* removed the entire index
+* 'about me' is all is left
+* working on the lite version of the site with just pure text, no javascript
+
+as i navigated sites to understand how i can streamline mine, in this day and age the only thing that i really cared for is the about me section, it's truly the differential, the oversaturation is real, the millionth page you saw today is but a photocopy of the previous millionth page you saw yesterday, i came to this observing my own behavior, projects, galleries, a carousel of logos, fancy scroll animations, what languages do i know (almost all of them), you cannot tell nothing apart, and you don't care
+
+as a result i wanted to not having a separated about me page, and since it's just a tiny text anyway i pushed for the index, i have an old design of mine with a switchable off-screen div for the about me section, and after pondering the design for a while on my head, i realized that the two pages talks about the same but with different texts, i removed the previous index entirely and everything fell into piece, and i kick myself for not realizing it sooner
+
+as an added bonus: dear reader, since your page is now first and foremost an about me page, you want to truly sweat the design, reverse the thinking: give yourself the center stage and make the projects sidekick you, the most important thing today on a web by far is the guy behind it, i've seen galleries on the brutalist webring with 400 photos throw together with no styles and it accomplishes the same as 90-meg SPAs project portfolios with fancy scroll animations: to show some fucking photos, your will to touch again something truly elaborate will not survive the test of time, but a good untouched about me page can last forever
+
+i remember some viral sites years after visiting and in fact they are just truly spectacular about me pages, talk about achieving goals
+
+https://bruno-simon.com
+https://www.nardove.com
+https://rohit11.vercel.app

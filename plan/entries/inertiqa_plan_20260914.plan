@@ -1,0 +1,3 @@
+the original keymap.c source cannot be found anywhere, so i have no choice but to take the keymap.json that was the only thing that was saved on github and do the full course, creating everything from zero starting with the keymap, decoding the json, translating the keycodes, etc
+
+while adding the arasaka logo of cyberpunk2077 on the slave screen, i realized that, since i'm already here, i could put some logo that i like even more, so what about the weyland-yutani one?, said and done, i've created the 1-bit old logo version and fought long time with the bit ordering and the screen rotation in the file description, but now it looks very very good, at the moment it has not been possible to implement the key lighting routines of takuya

@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+html {
+  --text-color: rgb(32 32 32);       /* Texto activo (Negro en claro) */
+  --text-dimmed: #ccc;               /* Texto atenuado/inactivo */
+}
+
+html.dark {
+  --text-color: rgb(237 237 237);   /* Texto activo (Blanco en oscuro) */
+  --text-dimmed: #666;               /* Texto atenuado/inactivo */
+}
+
+/* Cuando hay uno abierto, atenúa los h2 de los demás acordeones cerrados */
+body:has(details[open]) details:not([open]) summary h2 {
+  color: var(--text-dimmed);
+  transition: color 0.15s ease;
+}
+
+/* Al pasar el ratón por un acordeón cerrado, recupera el color principal */
+body:has(details[open]) details:not([open]) summary:hover h2 {
+  color: var(--text-color);
+}
+
+details[open] summary h2 {
+  color: var(--text-color);
+}
+
+summary {
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.plain {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+@media (min-width:640px) {
+  h2 {
+  margin: 0rem;
+  }
+}

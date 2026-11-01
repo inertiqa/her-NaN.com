@@ -1,0 +1,5 @@
+bach oneliner to create multiple files:
+
+[CODE]
+touch ./directory/{file0,file1,file2}.txt
+[CODE]

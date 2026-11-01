@@ -1,0 +1,7 @@
+zxelda-uoc v11
+
+* text color at the menu
+* defeating enemies gives score points
+* at the game over screen, 3s delay brings you to title screen
+* every hud element have a graphic
+* assorted bugfixes

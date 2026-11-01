@@ -1,0 +1,8 @@
+# usual suspects
+.DS_Store
+*.log
+node_modules/
+.env
+
+# specifics
+docker-compose.yml

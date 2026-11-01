@@ -1,0 +1,8 @@
+svg with system dark scheme query
+
+[CODE]
+<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+<path d="M756.842 355.263V290H323.158v253.685h33.684v-12.633H335.79V424.737h185.263v118.948H744.21v233.684h-90.525V668.947h-12.632v108.421h-88.422V604.737H430.526v172.631H335.79V600.264h-12.631V790h433.684V410.526h-75.789v12.632h63.157v107.894H533.684V302.631H744.21v52.632h12.632zM443.158 617.368H540v160h-96.842v-160zm77.895-205.263H335.79V302.631h185.263v109.474z"/>
+<style>path{fill:#000}@media(prefers-color-scheme:dark){path{fill:#fff}}</style>
+</svg>
+[CODE]

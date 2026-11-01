@@ -1,0 +1,17 @@
+* jellyfishes color changed to something more desaturated
+* started to make strides to complete css unification
+* font family changed to raleway
+* removed the code index section, there's github for that
+* more QOL changes, back to to the top link, plan entries sorted by year, handy -> on links pointing outside the domain
+
+idk if the font change will last, headers look good, but i'm not as convinced with the body text
+
+there's still work to be done with the styles, globals needs more unification and per-page specifics need more specification
+
+after so many days bringing the webpage to completion, i'm close but it feels... underwhelming, you can see all there is in a minute or less, this is where the saying of the last 10% takes the 90% of the effort
+
+lately i'm discoveing more on the subject of 'plainfiles' or content based on plain text files, even rejecting images, js, css, 1Mb limit, and other extreme subcultures, really feels like discovering very bad clubs lost around the city, thing is, there's not much it can be done with limitations so severe, any and all plainfile sites look exactly the same but some color swap, talk about AI design slop unification
+
+i've realized that simply didn't know better, i knew for a fact that it had little in common with what's inside website galleries, or people building portfolios today, but as soon as i discovered more of the plainfile culture, it became pretty obvious that i worked hard to produce (in isolation) a standard solution to a text-heavy website, obviously some sites gonna be exactly like mine, and while i put a great deal of effort into css and presentation, in the end, sitesp look and feel pretty much the same
+
+it didn't really mattered because the main motivation to finish the page was to demonstrate myself that i can put everything into place and consider it done once and for all, and also want a site to document what i've done, since one of my new mottos in life is to do a little every single day, i mean, i did something everyday but didn't keep track of it until now

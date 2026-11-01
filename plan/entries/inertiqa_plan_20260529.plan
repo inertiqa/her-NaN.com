@@ -1,0 +1,8 @@
+zxelda-uoc v10
+
+* enemy octo is complete
+* every map but the start have two enemies
+* dungeon entrance is now at the center of the screen after the random placement
+* enemies respect title collisions
+* boss now have ranged attack
+* even more bugfixes

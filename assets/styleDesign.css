@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+html {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    transition: background-image 0.33s ease-in-out;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    margin: 3.5rem 0;
+}
+
+main img.item {
+    width: auto;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.33s ease, transform 0.33s ease, filter 0.33s ease;
+}
+
+main img.item:hover {
+    opacity: 0.8;
+}
+
+.dark main img.item {
+    filter: invert(1) brightness(0.96);
+}
+
+#bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.dark #bg-overlay {
+    filter: invert(1) brightness(0.96);
+}

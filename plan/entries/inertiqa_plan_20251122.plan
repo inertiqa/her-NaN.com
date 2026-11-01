@@ -1,0 +1,13 @@
+restore any usb drive after an os installation with elusive uefi partitions:
+
+[CODE]
+diskpart
+list disk
+select disk *x*
+clean // clean is shorthand for these commands
+    | list partition
+    | select partition *x*
+    | delete partition *x*
+create partition primary
+format fs=ntfs quick
+[CODE]

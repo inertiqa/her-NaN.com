@@ -1,0 +1,16 @@
+* installed fuse emulator with the correct startup .roms files
+
+finishing 'zxelda_uoc' with z88dk for college in four months, this is now the initial entry of the zelda port in asm for the zx spectrum, since the original game is a bit less than 128kb (save system excluded), a full port should be possible, i'm not versed on z80 asm so this will document efforts should someone comes after
+
+after years of failing to produce some kind of blog writting consistency myself, i started to suspect that the bare reason why everyone mostly fails is because the barrier to write is too high, us programmers have our blogs running nonstop for decades in state of complete ruin as the consistency dissipates with generators, transpilations, hydration strategies, personalizations, deployments, it keeps getting worse by the year
+
+Carmack didn't needed more than pure text files ten years straight
+
+the only change to the Carmack original .plan files is that mine is a write-once file log, completed / abandoned stuff will be written on later date files, search for it
+
+Any section can be empty, not all sections can be empty, in order:
+
+* completed tasks
++ future tasks / ideas
+- abandoned tasks / ideas
+(no prefix) rants

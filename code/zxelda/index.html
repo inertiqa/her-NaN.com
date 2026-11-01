@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ZXelda v13</title>
+        <script src="jsspeccy/jsspeccy.js"></script>
+        <style>
+            body {
+                background-color: #444;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                color: white;
+                font-family: sans-serif;
+                }
+    	    a {
+                color: teal;
+            }
+            a:visited {
+                color: teal;
+            }
+            #jsspeccy {
+                border: 10px solid #222;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                background-color: #000;
+            }
+        </style>
+    </head>
+
+    <body>
+	<div id="jsspeccy"></div>
+
+	<div class="info">
+		<p>Q: up // A: down // O: left // P: right // Space: attack</p>
+
+    <script>
+	let emu = JSSpeccy(document.getElementById('jsspeccy'), {
+                autoLoadTapes: true,
+                openUrl: 'zxelda_v13.tap',
+                machine: 48,
+		zoom: 2
+	});
+    </script>
+    </body>
+</html>

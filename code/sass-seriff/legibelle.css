@@ -1,0 +1,434 @@
+//////// type
+//baseline body text:
+
+//typography examples
+//https://semver.org
+//https://www.font-samples.com/arial.htm
+//https://www.splintered.co.uk/news/112/
+//
+
+//external framework references
+//[awesome minimalists css frameworks -GitHub-](https://github.com/neiesc/awesome-minimalist#framework-for-css) //pull request con el mio
+//
+//[avalanche](http://colourgarden.net/avalanche/)
+//[bass](http://basscss.com)
+//[bijou](http://andhart.github.io/bijou/)
+//[bootstrap](https://getbootstrap.com)
+//[bulma](https://bulma.io)
+//[cardinal](https://github.com/cardinalcss/cardinalcss/tree/master/base)
+//[cascade](http://jslegers.github.io/cascadeframeworklight/)
+//[concise](https://concisecss.com/documentation/core)
+//[concrete](http://davidlumley.github.io/concrete/)
+//[foundation](https://foundation.zurb.com)
+//[furtive](https://github.com/johno/furtive/tree/master/scss)
+//[kube](https://imperavi.com/kube/)
+//[lit](https://github.com/ajusa/lit)
+//[materialize](https://materializecss.com)
+//[milligram](https://milligram.io)
+//[pure css](https://purecss.io)
+//[responsive kubrik](https://wordpress.org/themes/responsive-kubrick/)
+//[skeleton](https://www.getskeleton.com)
+//
+
+//external css references
+//[csstricks](https://css-tricks.com)
+//[rem and em](https://j.eremy.net/confused-about-rem-and-em/)
+//[css + ~ selectors](https://techbrij.com/css-selector-adjacent-child-sibling)
+
+//external fonts references
+//[safe web fonts 2019](https://www.lifewire.com/web-safe-fonts-3467430)
+//[complete guide of safe web fonts for all SO](http://www.apaddedcell.com/sites/www.apaddedcell.com/files/fonts-article/final/index.html)
+//[cssfontstack](https://www.cssfontstack.com)
+//[guide to linux fonts](https://www.webfx.com/blog/web-design/a-web-designers-guide-to-linux-fonts/)
+//[web safe fonts](https://websitesetup.org/web-safe-fonts-html-css/)
+//
+
+//external development references
+//[can i use](https://caniuse.com)
+//[codeguide](https://codeguide.co)
+//[editor config](https://EditorConfig.org)
+//[pro git](https://git-scm.com/book/en/v2)
+//[semver](https://semver.org/spec/v2.0.0.html)
+//
+
+//used for this project
+//[git](https://git-scm.com/)
+//[github](https://github.com/)
+//[neovim](https://neovim.io)
+//[normalize.css](http://necolas.github.io/normalize.css/)
+//[visual studio code + sass live server + live server](https://code.visualstudio.com)
+//
+
+/*
+//////// header
+header {
+	font-size: $small;
+	background-color: black;
+	min-height: 8em;
+	align-content: center;
+}
+
+.navUL {
+	display: flex;
+	justify-content: space-between;
+	padding: 0rem;
+	list-style-type: none;
+	//background-color: #ddd;
+}
+
+.navUL li {
+	//background-color: #aaa;
+}
+
+nav {
+}
+
+.branding {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-grow: 2;
+}
+
+.logo {
+	width: 192px;
+	//background-color: #bbb;
+}
+
+.burger {
+	display: initial;
+}
+
+.opts {
+	//background-color: #ccc;
+	display: none;
+	flex-grow: 1;
+}
+
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	font-size: $small;
+}
+
+.breadcrumbs ul {
+	padding: 0rem;
+}
+
+.breadcrumbs li {
+	display: inline-block;
+}
+
+.breadcrumbs li::after {
+	padding: 0rem 1rem;
+	content: ">";
+}
+
+.breadcrumbs li:nth-last-child(1)::after {
+	content: "";
+}
+
+.current {
+	text-transform: uppercase;
+}
+
+//////// white padding mobile
+main > *:not(.fullWidth) {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.fullWidth {
+	grid-column: 1 / -1;
+	//margin: 0rem;
+}
+
+.hero {
+	height: 20rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.column {
+	border: 1px solid green;
+}
+
+.columns {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid red;
+}
+
+.sidebarLeft, .sidebarRight {
+	display: none;
+}
+
+footer {
+	padding: 2rem 0rem 2rem 0rem;
+	background-color: $black;
+	color: $white;
+}
+
+.sidebarBottom {
+	background-color: $lightGrey;
+	font-size: $small;
+}
+
+@media screen and(min-width:calc(#{$centerColumnWidth} + 1rem)) {
+	wrapper > * {
+		grid-template-columns: 1fr 2fr $centerColumnWidth 2fr 1fr;
+		border: 1px solid green;	
+	}
+
+	nav > * {
+		grid-column: 3; //uses center column for content in every section
+	}
+
+	wrapper > * > * {
+		grid-column: 3; //uses center column for content in every section
+		margin: 0rem; //white x-axis margin around screen on mobile
+	}
+
+	main > *:not(.fullWidth) {
+		margin-left: 0rem;
+		margin-right: 0rem;
+	}
+
+	.sidebarLeft, .sidebarRight {
+		display: initial;
+	}
+
+	.sidebarLeft {
+		grid-column: 2 / span 1;
+	}
+
+	.sidebarRight {
+		grid-column: 4 / span 1;
+	}
+
+	.hero {
+		height: 40rem;
+	}
+
+	.branding {
+		justify-content: initial;
+	}
+
+	.branding:nth-child(1) {
+		display: hidden;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	.opts {
+		display: initial;
+	}
+
+	.columns {
+		flex-direction: row;
+	}
+
+	.column {
+		flex-basis: 0; //equal widths
+		flex-grow: 1;
+		margin: 0rem 1rem;
+	}
+
+	.column:nth-child(1) {
+		margin-left: 0rem;
+	}
+
+	.column:nth-last-child(1) {
+		margin-right: 0rem;
+	}
+
+//////// back top right
+	nav .right {
+		margin-left: auto;
+	}
+
+	.left {
+		text-align: right;
+		grid-column: 2 / span 1;
+	}
+
+	.extendedLeft {
+		grid-column: 2 / span 2;
+	}
+}
+
+//////// burger on mobile
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+
+  cursor: pointer;
+  height: 1px;
+  width: 20px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -8px;
+}
+
+#nav-toggle span:after {
+  bottom: -8px;
+}
+
+.sticky {
+	position: sticky;
+	top: 0rem;
+	background-color: $transparentWhite;
+}
+*/
+
+
+
+/* /////////////////////////////////////////////////////////////////////
+// equivalentes fuentes en linux
+// 
+// VERDANA {font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;}
+// ARIAL {font-family : Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, Sans-serif;}
+// MONOSPACE {font-family : "Courier New", "Nimbus Mono L", Monospace;}
+
+/*
+@import 'color';
+
+$thin: 100;
+$regular: 400;
+$bold: 700;
+$small: 0.9rem;
+
+//////// paragraph
+p {
+	margin-bottom: 1rem;
+}
+
+//////// preformatted
+pre {
+	font-family: $monospaced;
+	background: $lightGrey;
+	padding: 1rem;
+	overflow: auto;
+}
+
+code {
+	font-family: $monospaced;
+	background: $lightGrey;
+	padding: 0.2rem 0.5rem;
+}
+
+code, pre {
+	font-family: $monospaced;
+}
+
+pre > code {
+	font-family: $monospaced;
+	padding: 0;
+}
+
+//////// links
+a {
+	color: $darkerGrey;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: $green;
+}
+
+//////// imports (fixed order)
+strong {
+	font-weight: bold;
+}
+
+//////// imports (fixed order)
+i {
+	font-style: italic;
+}
+
+//////// imports (fixed order)
+quote, blockquote {
+	color: $lightGrey;
+}
+
+quote::selection {
+	color: $white;
+  background: $lightGrey;
+}
+
+
+//////// headers
+h1 {
+	font-size: 3.157rem;
+	font-family: $trebuchet;
+	font-weight: $regular;
+	text-transform: capitalize;
+	margin: 3rem 0rem 2rem 0rem;
+}
+
+h2 {
+	font-size: 2.369rem;
+	font-family: $trebuchet;
+	font-weight: $regular;
+	text-transform: capitalize;
+	margin: 3rem 0rem 1rem 0rem;
+}
+
+h3 {
+	font-size: 1.444rem;
+	font-weight: $bold;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	margin-top: 3rem;
+}
+
+h4 {
+	font-size: 1.333rem;
+	font-weight: $bold;
+	letter-spacing: 0.1rem;
+	text-transform: capitalize;
+	margin-top: 3rem;
+}
+
+h5 {
+	font-size: 1rem;
+	font-weight: $bold;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	margin-top: 3rem;
+}
+
+h6 {
+	font-size: 1rem;
+	font-weight: $bold;
+	letter-spacing: 0.1rem;
+	margin-top: 3rem;
+}
+
+//////// code & preformatted
+code {
+	padding: 0.2rem 0.5rem;
+	margin: 0rem 0.2rem;
+	font-size: 90%;
+	white-space: nowrap;
+	background: #f1f1f1;
+	border: 1px solid #e1e1e1;
+	border-radius: 4px;
+}
+
+pre > code {
+	display: block;
+	padding: 1rem 1.5rem;
+	white-space: pre;
+}
+*/

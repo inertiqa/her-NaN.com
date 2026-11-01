@@ -1,0 +1,5 @@
+download a site:
+
+[CODE]
+wget --mirror --convert-links --page-requisites --no-parent -P 'your-folder' https://example.com
+[CODE]

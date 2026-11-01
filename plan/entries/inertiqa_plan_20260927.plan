@@ -1,0 +1,5 @@
+* assembled an archive page of Carmack .plan archive with async loading
+
+impossible to clone the raid0 from the svz with clonezilla, it continues to give problems and when i managed to choose all the partitions of the two os, clonezilla failed on me due a reading error in the Win7 partition, after checking with debian tools, the health of the ssd is still at least 50%, there is hope, the rest of the day was spent in helping ian to rescue his car with a new battery, and doing the typical favors to jorge, i've still managed to create a beta version of the Carmack complete .plan archives with a much better interface than the existing ones, excited to use it on my own archive and thinking about adding a very necessary (in my opinion) search engine
+
+ps. final classes of the CS started today

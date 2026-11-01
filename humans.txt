@@ -14,7 +14,7 @@
 ⣿⠃⠃⠄⠄⠄⠄⠄⠄⣀⢀⠄⠄⡀⡀⢀⣤⣴⣤⣤⣀⣀⠄⠄⠄⠄⠄⠄⠁⢹
 
 ________________________________________
-Last update - https://github.com/esparade/randomize-usr.com
+Last update - https://github.com/inertiqa/randomize-usr.com
 Language - English
 ________________________________________
 
@@ -48,4 +48,4 @@ ________________________________________
 SOUNDTRACK
 
 Alien Isolation
-https://www.youtube.com/watch?v=xDTF_rhCHCM
+https://www.youtube.com/watch?v=vM_5qvUwFKs

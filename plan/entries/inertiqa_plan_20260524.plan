@@ -1,0 +1,5 @@
+zxelda-uoc v5
+
+* sword attacks now plays sound fx
+* hero sprite implements xor mask, transparent border area
+* hud linked with game variables - useful information

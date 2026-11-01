@@ -1,0 +1,80 @@
+* script to rotate the background and remove the variety app from debian
+
+REPLACE ALL SINGLE QUOTE 'stubs' WITH ACTUAL DATA
+
+create the script bck_rttr.sh in the Pictures/Wallpapers folder:
+[CODE]
+sudo nano ~/Pictures/Wallpapers/bkg_rttr.sh
+[CODE]
+
+paste:
+[CODE]
+#!/usr/bin/env bash
+
+walls_dir="$HOME/Pictures/Wallpapers"
+
+selection=$(find "$walls_dir" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.png" \) 2>/dev/null | shuf -n1)
+
+if [ -z "$selection" ]; then
+	echo "Error: no image file of known extension was found in $walls_dir"
+	exit 1
+fi
+
+uri="file://$(realpath "$selection")"
+
+echo "Setting wallpaper: $selection"
+echo "Path: $uri"
+
+gsettings set org.gnome.desktop.background picture-uri "$uri"
+gsettings set org.gnome.desktop.background picture-uri-dark "$uri"
+[CODE]
+
+create the user config systemd folder and the wallapaper.service:
+[CODE]
+mkdir -p ~/.config/systemd/user
+sudo nano ~/.config/systemd/user/wallpaper.service
+[CODE]
+
+paste:
+[CODE]
+[Unit]
+Description=Rotate Wallpapers
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/'username'/Pictures/Wallpapers/'bck_script.sh'
+
+[Install]
+WantedBy=default.target
+[CODE]
+
+create the timer 'wallpaper.timer':
+[CODE]
+sudo nano ~/.config/systemd/user/wallpaper.timer
+[CODE]
+
+paste:
+[CODE]
+[Unit]
+Description=Timer for wallpaper rotation
+
+[Timer]
+OnStartupSec=1min
+OnUnitActiveSec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+[CODE]
+
+execute & run:
+[CODE]
+systemctl --user daemon-reload
+systemctl --user enable --now wallpaper.timer
+[CODE]
+
+confirm:
+[CODE]
+systemctl --user status wallpaper.timer
+systemctl --userlist-timers wallpaper.timer
+[CODE]

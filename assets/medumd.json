@@ -1,0 +1,55 @@
+{
+  "frames": {
+    "medu0": {
+      "frame": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    },
+    "medu1": {
+      "frame": { "x": 24, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    },
+    "medu2": {
+      "frame": { "x": 48, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    },
+    "medu3": {
+      "frame": { "x": 72, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    },
+    "medu4": {
+      "frame": { "x": 96, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    },
+    "medu5": {
+      "frame": { "x": 120, "y": 0, "w": 24, "h": 32 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 24, "h": 32 },
+      "sourceSize": { "w": 24, "h": 32 }
+    }
+  },
+  "animations": {
+    "swim": ["medu0", "medu1", "medu2", "medu3", "medu4", "medu5"]
+  },
+  "meta": {
+    "image": "medumd.gif",
+    "format": "RGBA8888",
+    "size": { "w": 144, "h": 32 },
+    "scale": ".5"
+  }
+}

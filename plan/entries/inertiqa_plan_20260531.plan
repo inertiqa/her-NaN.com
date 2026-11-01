@@ -1,0 +1,7 @@
+zxelda-uoc v12
+
+* created all the game maps (28)
+* fixed all pair screen connections
+* killing the boss cycles the game with stronger enemies
+* hero correctly positioned on the screen at game start
+* logs of bugfixes

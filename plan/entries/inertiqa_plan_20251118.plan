@@ -1,0 +1,7 @@
+completely nuke openoffice from linux:
+
+[CODE]
+sudo apt remove --purge "libreoffice*"
+sudo apt clean
+sudo apt autoremove
+[CODE]

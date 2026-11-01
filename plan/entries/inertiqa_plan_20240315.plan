@@ -1,0 +1,47 @@
+crontab cheatsheet
+
+$crontab -e
+
+###########
+
+* * * * * command to be executed
+| | | | |_______________ Day of the Week (0 - 6)(Sunday to Saturday)
+| | | |_______________ Month of the Year (1 - 12)
+| | |_______________ Day of the Month (1 - 31)
+| |_______________ Hour (0 - 23)
+|_______________ Minute (0 - 59)
+
+@hourly
+@daily
+
+########
+
+SHELL=/bin/bash
+MAILTO=root@example.com
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+The first three lines in the code above set up a default environment. The environment must be set to whatever is necessary for a given user because cron does not provide an environment of any kind. The SHELL variable specifies the shell to use when commands are executed. This example specifies the Bash shell. The MAILTO variable sets the email address where cron job results will be sent. These emails can provide the status of the cron job (backups, updates, etc.) and consist of the output you would see if you ran the program manually from the command line. The third line sets up the PATH for the environment. Even though the path is set here, I always prepend the fully qualified path to each executable.
+This line runs my self-written Bash shell script, rsbu, that backs up all my systems. This job kicks off at 1:01 a.m. (01 01) every day. The asterisks (*) in positions three, four, and five of the time specification are like file globs, or wildcards, for other time divisions; they specify "every day of the month," "every month," and "every day of the week." This line runs my backups twice; one backs up to an internal dedicated backup hard drive, and the other backs up to an external USB drive that I can take to the safe deposit box.
+
+The following line sets the hardware clock on the computer using the system clock as the source of an accurate time. This line is set to run at 5:03 a.m. (03 05) every day.
+
+# backup using the rsbu program to the internal 4TB HDD and then 4TB external
+01 01 * * * /usr/local/bin/rsbu -vbd1 ; /usr/local/bin/rsbu -vbd2
+
+# Set the hardware clock to keep it in sync with the more accurate system clock
+03 05 * * * /sbin/hwclock --systohc
+
+# Perform monthly updates on the first of the month
+# 25 04 1 * * /usr/bin/dnf -y update
+
+https://opensource.com/article/17/11/how-use-cron-linux
+
+########
+
+    The system times (i.e., the operating system time) on my many computers are set using the Network Time Protocol (NTP). While NTP sets the system time, it does not set the hardware time, which can drift. I use cron to set the hardware time based on the system time.
+    I also have a Bash program I run early every morning that creates a new "message of the day" (MOTD) on each computer. It contains information, such as disk usage, that should be current in order to be useful.
+    Many system processes and services, like Logwatch, logrotate, and Rootkit Hunter, use the cron service to schedule tasks and run programs every day.
+
+The crond daemon is the background service that enables cron functionality.
+
+The cron service checks for files in the /var/spool/cron and /etc/cron.d directories and the /etc/anacrontab file. The contents of these files define cron jobs that are to be run at various intervals. The individual user cron files are located in /var/spool/cron, and system services and applications generally add cron job files in the /etc/cron.d directory. The /etc/anacrontab is a special case that will be covered later in this article.

@@ -1,0 +1,245 @@
+finally received the last piece of the vaio svz puzzle (the power brick), and now i can plug the entire setup, but to make it run i needed to touch the gpu drivers and i got bluescreened (lol, so many years since the last one), after some failsafe boots and win7 os rescue, i was able to install everything and use the full potential of the glorious 1gb vram gpu, anyway, i realized i got couple of functions missing, bluetooth and trackpad, fortunately, there's still ONE site on the entire internet (dose.0wnz.at/ftp.vaiolink.com/PUB/VAIO/ORIGINAL/ - dose.0wnz.at/ftp.vaiolink.com/PUB/VAIO/UPDATES/) that hoards all the drivers ever released for any and all vaio's, so after a little information gathering, managed to install everything but bluetooth for some unknown reason, and, suggested by gemini that the driver install order means quite a lot on the vaio's, decided to nuke everything and try again, only to discover after hitting my head with the wall for 4 hours, that for the bluetooth to work you MUST have sony bluetooth bloatware installed, so in a way, i wiped everything for nothing (knowledge it's not for free)
+
+if you ever found yourself with a vaio svz1311c5e that you want to make it shine, here's for your eyes delight the files needed and the install order (there's an oficial 4-discs bundle rescue discs for this model on archive.org btw):
+
+(most of this list was found on vaiolibrary.com)
+
+01_INDCHI-00263910-0042
+intel chipset driver (chipset)
+
+02_INDMEI-00267493-0042
+intel management engine interface (power controller)
+
+03_INDSAT-00266712-0042
+intel mobile express chipset sata raid controller (sata controller)
+
+04_INDUSB-00266909-0042
+intel usb 3.0 extensible host controller (usb 3.0)
+
+05_REDETH-00266776-0042
+realtek pcie gigabyte ethernet familiy controller (ethernet)
+
+06_INDWLL-00265235-0042
+intel centrino advanced n6235 driver (wifi)
+
+07_SOASNW-00267602-0042
+sony vaio smart network (bluetooth enabler)
+
+08_INDBLT-00264017-004
+intel centrino bluetooth 4.0 + high speed adapter update (bluetooth driver)
+
+09_REDMCC-00266226-0042
+realtek pcie card reader driver (integrated sd card reader port)
+
+10_RNDUSB-00263953-0042
+renesas electronics dock usb 3.0 host controller (dock controller)
+
+11_MRDOTH-00248942-0042
+generic marvell 61xx raid controller for docking station (usb port dock)
+
+12_SODOTH-00264792-0042
+sony firmware extension parser device driver (sony bios comms)
+
+13_SOASSL-00264711-0042
+sony shared library (sony utilities library)
+
+14_SOAOTH-61000000-0042
+sony hotkey utilities (keyboard hotkey functions)
+
+15_EP0000605001-vaioControlCenter_649-08230
+vaio control center (vaio control center)
+
+16_SPDTPD-00267971-0042
+synaptics PS/2 port touchpad (trackpad)
+
+17_AUDFPD-00264020-0042
+authentec aes1660 (fingerprint sensor)
+
+18_AUAOTH-00266716-0042
+authentec truesuite software (fingerprint manager)
+
+19_A2DVID-00268409-0042
+amd radeon hd 6600 & intel hd graphics 4000 driver bundle (gpus)
+
+20_INAWID-00267860-0042
+intel widi software
+
+21_EP0000600623_remoteKeyboard_120-09270
+remote keyboard with bravia
+
+22_EP0000297995_remoteKeyboardPS3_121-05220
+remote keyboard with playstation3
+
+23_EP0000600291_remotePlayPS3Update_110-15071
+remote file access with playstation3
+
+24_EP0000600842_vaioLocationUtility_1100-06060
+sony vaio location utility (profile switching by wifi change -printer, shared folders, etc-)
+
+----
+
+99_intel_hd4000_win64_153343.4425
+intel hd graphics 4000 driver (last version for intel hd4000 on win7, use if not gonna use the external dock, it's the most stable version)
+
+----
+
+after win7 is full stock and sports full native functionality again (received it with a useless clean w10), turned my attention to the debian dual boot over raid0, good thing that was a problem i solved already on arrival on another endless troubleshoot session, just in case you also want to dualboot yours, heres the tutorial:
+
+====================================
+
+1. Fundamental Architecture:
+The hardware uses a RAID0 volume managed by Intel (mdadm). The partitions will be identified as /dev/md/Volume0_0pX or /dev/md126pX.
+
+BIOS Restriction (InsydeH2O): The firmware ignores standard EFI paths added by Linux. It will always try to execute: \EFI\Microsoft\Boot\bootmgfw.efi on the first EFI partition (FAT32 format, p1).
+
+Shim Dependency: If the signed Debian bootloader is used, it strictly looks for grubx64.efi in its own directory.
+
+2. Initial Installation
+Install linux on the unpartitioned space that was left after windows install (I choosed Debian):
+
+During partitioning, if the installer creates a second EFI partition on its own, it doesn't matter.
+
+Complete the linux install. The vaio svz will boot straight into win7 still, so boot from the installation USB again.
+
+3. You need to fix the grub since sony bios is a bitch (grub is fine, it's sony bios what fucks around), so on the installation main window, enter the terminal and sudo yourself:
+
+# 1. Load modules and assemble the Intel RAID
+[CODE]
+modprobe ext4
+modprobe vfat
+mdadm --assemble --scan
+[CODE]
+
+# 2. Mount the Debian(linux) system (adjust the root partition number)
+# IT IS NECESSARY TO MOUNT THE DEBIAN(linux) BOOT PARTITION TO COPY grubx64.efi TO WINDOWS:
+# mount the 1GB partition located just before the main Debian(linux) partition that contains grubx64.efi (replace X with actual partition number that contains grubx64.efi)
+[CODE]
+mount /dev/md126pX /mnt
+[CODE]
+
+# 3. Bind kernel devices
+[CODE]
+mount --bind /dev /mnt/dev
+mount --bind /dev/pts /mnt/dev/pts
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+[CODE]
+
+# 4. Enter the installed system
+[CODE]
+chroot /mnt
+[CODE]
+
+4. Connect the first EFI partition (p1) and rearrange the binaries:
+# 1. Now mount the Windows EFI partition (p1) to a temporary folder
+[CODE]
+mkdir -p /mnt/win_efi
+mount -t vfat /dev/md126p1 /mnt/win_efi
+[CODE]
+
+# 2. Backup the original win7 bootloader
+[CODE]
+cp /mnt/win_efi/EFI/Microsoft/Boot/bootmgfw.efi /mnt/win_efi/EFI/Microsoft/Boot/bootmgfw.efi.bak
+[CODE]
+
+# 3. Copy the GRUB binary both under its own name and replacing the Windows one
+# (Use the actual Debian grubx64.efi to avoid failed shim dependencies)
+[CODE]
+cp /boot/efi/EFI/debian/grubx64.efi /mnt/win_efi/EFI/Microsoft/Boot/grubx64.efi
+cp /boot/efi/EFI/debian/grubx64.efi /mnt/win_efi/EFI/Microsoft/Boot/bootmgfw.efi
+[CODE]
+
+# 4. Create the bridge file to redirect GRUB to the root partition
+[CODE]
+nano /mnt/win_efi/EFI/Microsoft/Boot/grub.cfg
+[CODE]
+
+Add this content to the grub.cfg file:
+
+[CODE]
+	search.file /boot/grub/grub.cfg root
+	set prefix=($root)/boot/grub
+	configfile $prefix/grub.cfg
+[CODE]
+
+# 5. Unmount
+[CODE]
+umount /mnt/win_efi
+[CODE]
+
+5. Dual Boot Menu Configuration (GRUB)
+
+Configure Debian(linux) to display the grub and allow choosing between Linux and Win7:
+Ensure menu visibility in /etc/default/grub:
+[CODE]
+nano /etc/default/grub
+[CODE]
+
+Add these lines:
+[CODE]
+    GRUB_TIMEOUT_STYLE=menu
+    GRUB_TIMEOUT=5
+    GRUB_DISABLE_OS_PROBER=false
+    GRUB_CMDLINE_LINUX_DEFAULT=""
+[CODE]
+
+Add the manual Win7 entry in /etc/grub.d/40_custom:
+[CODE]
+nano /etc/grub.d/40_custom
+[CODE]
+
+Add at the end:
+[CODE]
+menuentry "Windows 7" --class windows --class os {
+    insmod part_gpt
+    insmod fat
+    insmod chain
+    search --no-floppy --file --set=root /EFI/Microsoft/Boot/bootmgfw.efi.bak
+    chainloader /EFI/Microsoft/Boot/bootmgfw.efi.bak
+}
+[CODE]
+
+Apply changes and reboot:
+[CODE]
+update-grub
+reboot
+[CODE]
+
+====================
+
+and just incase you want to image the raid0 SO YOU NEVER HAVE TO DEAL WITH THIS SHIT EVER FUCKING AGAIN (like me), here's the clonezilla guide for that juicy proprietary ssd:
+
+USE CLONEZILLA UBUNTU FLAVOUR EXCLUSIVELY:
+
+1.
+on clonezilla main menu, launch a command line, then:
+
+[CODE]
+sudo su -
+export IMSM_NO_PLATFORM=1
+mdadm -A --scan --verbose
+lsblk
+[CODE]
+
+you'll get a list with all the partitions from p1 to p5 or p6 or even more, at least 3 for win7 and minimum 2 for Debian(linux), if you are here, you are on the right track.
+
+2.
+still on the CLI launch clonezilla gui
+
+clonezilla
+
+select expert mode
+
+'saveparts'
+'disk_or_parts'
+check all partitions from the presented list (p1 to p5 or p6)
+-q2
+in advanced extra parameters check --rescue (just in case you have bad sectors, for clonezilla to zero them and complete the imaging)
+-z1p
+size 0
+
+done
+
+(i assume any and all svz models follows this same procedure)
+
+quite the troubleshoot huh? i'm still impressed i was able to pull this off

@@ -1,0 +1,5 @@
+* added a subtle animated waves background shader
+* fixed the legibelle scaffolding so root element is no longer the body tag (LOL)
+* now sun emoji for the theme color changer is linked to a wheater API for the emoji to dynamically change depending on local weather conditions, as the current moon phases on the dark theme
+* added a pageview counter with a public API, count displayed as a hex color value (who cares the number)
+* completely removed the traditional blog

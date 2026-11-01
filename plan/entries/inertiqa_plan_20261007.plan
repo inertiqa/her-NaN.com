@@ -1,0 +1,10 @@
+* moved the hosting from github to codeberg
+* fixed some circular calls on the homepage js
+* projects links now show at random from a pool of projects
+* the blog entry 'ago' date updates without reload
+* separate the waves background to its own project
+* the index emoji displays the weather as tooltip
+* added the favicon
+* created a youtube channel for the gameplay video in the about, probably some stream will follow
+
+until i decide if the background gonna have dolphins around, better to keep polishing the page

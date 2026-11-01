@@ -1,0 +1,31 @@
+The Humble Programmer. A lecture by Edsger W. Dijkstra. 1973.
+
+The lecture is full of material to chew on for days, and god knows I'm not one of those which is full-pedal AI for everything, this is also not to prove an AI point, but it's mindboggling how exactly he writes about the current landscape of today.
+
+Some takes:
+
+    From my early days working with mechanical computers arise two opinions that I uphold to this day, one opinion was that a really competent programmer should be puzzle-minded and very fond of clever tricks; the other opinion was that programming was nothing more than optimizing the efficiency of the computational process, in one direction or the other.
+
+    We must rate FORTRAN at successful coding technique, but with very few effective aids to conception, aids which are now so urgently needed that time has come to consider it out of date. The sooner we can forget that FORTRAN ever existed, the better, for as a vehicle of thought it is no longer adequate: it wastes our brainpower.
+
+    Lisp has jokingly been described as "the most intelligent way to misuse a computer." I think that description a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts.
+
+    Using PL/I must be like flying a plane with 7,000 buttons and handles to manipulate in the cockpit. I absolutely fail to see how we can keep our growing programs firmly within our intellectual grip when by its sheer baroqueness the programming language - our basic tool! - already escapes our intellectual control. And if I have to describe the influence PL/I can have on its users, the closest metaphor that comes to my mind is that of a drug, in which they could only ask for more, more, more.
+
+    I think that we have learned so much that within a few years, programming can be an activity vastly different from what it has been up until now, so different that we had better prepare ourselves for the shock.
+
+    If you want more effective programmers, you will discover that they should not waste their time debugging - they should not introduce the bugs to start with.
+
+    WE MUST NOT FORGET THAT IS NOT OUR BUSINESS TO MAKE PROGRAMS, IT IS OUR BUSINESS TO DESIGN CLASSES OF COMPUTATIONS THAT WILL DISPLAY A DESIRED BEHAVIOR
+
+    Today a usual technique is to make a program and then to test it. Program testing can be a very effective way to show the presence of bugs, but it is hopelessly inadequate for showing their absence.
+
+    I come, whether I like it or not, to a completely different conclusion, viz. that the tools we are trying to use and the language or notation we are using to express or record our thoughts are the major factors determining what we can think or express at all! The analysis of the influence that programming languages have on the thinking habits of their users, and the recognition that, by now, brainpower is by far our scarcest resource.
+
+    Finally, in one respect one hopes that tomorrow's programming languages will differ greatly from what we are used to now, to a much greater extent than hitherto they should invite us to reflect in the structure of what we write down all abstractions needed to cope conceptually with the complexity of what we are designing.
+
+    As an aside I would like to insert a warning to those who identify the difficulty of the programming task with the struggle against the inadequacies of our current tools, because they might conclude that, once our tools will be much more adequate, programming will no longer be a problem. Programming will remain very difficult, because once we have freed ourselves from the circumstantial cumbersomeness, we will find ourselves free to tackle the problems that are now well beyond our programming capacity.
+
+    In principle I leave it to you to decide for yourself how much weight you are going to give to my considerations, knowing only too well that i can force no one else to share my beliefs. As in each serious revolution, it will provoke violent opposition and one can ask oneself where to expect expect the conservative forces trying to counteract such a development. I don't expect them primarily in big business, not even in the computer business; I expect them rather in the educational institutions that provide today's training and in those conservative groups of computer users that think their old programs so important that they don't think its worthwhile to rewrite and improve them. The intellectual ceiling of today's average programmer will prevent the revolution from taking place: with others programming so much more effectively
+
+    The confrontation with the programming task, is so unique that this novel experience can teach as a lot about ourselves, it should deepen our understanding of the processes of design and creation; it should give us better control over the task of organizing our thoughts. If it did not do so, to my taste we should not deserve the computer at all. It has already taught us a few lessons, and the one I have chosen to stress here is we shall do a much better programming job, provided that we approach the task with a full appreciation of its tremendous difficulty, provided that we stick to modest programming languages, provided that we respect the intrinsic limitations of the human mind and approach the task as Very Humble Programmers.

@@ -1,0 +1,45 @@
+* script to share a folder over the network with cifs on debian, windows serve, linux client:
+
+REPLACE ALL SINGLE QUOTE 'stubs' WITH ACTUAL DATA
+
+==== windows side ====
+ITS MANDATORY USER ACCOUNT HAVE DEFINED PASSWORD FOR SHARED FOLDER TO BE ACCESSIBLE
+ITS MANDATORY "NETWORK CATEGORY" SET ON "PRIVATE"
+
+select any folder, context menu -> propierties -> sharing -> advanced sharing -> check "share this folder"
+advanced sharing -> permissions -> group "everyone" -> "allow all"
+security -> user "windows_username" -> "allow all"
+
+
+==== linux side ====
+install cifs:
+[CODE]
+sudo apt install cifs-utils
+[CODE]
+
+write windows credentials:
+[CODE]
+sudo nano ~/.wincredentials
+[CODE]
+
+[CODE]
+username=windows_username
+password=windows_password
+domain=domain_name
+[CODE]
+
+give permissions:
+[CODE]
+sudo chmod 600 ~/.wincredentials
+[CODE]
+
+edit fstab:
+[CODE]
+sudo nano /etc/fstab
+[CODE]
+
+add at the end:
+[CODE]
+#windows-linux shared folder credentials
+//'windows_network_ip'/'windows_shared_folder' /home/'user'/Public cifs credentials=/home/'user'/.wincredentials,uid=1000,gid=1000,vers=3.0,noauto,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.idle-timeout=5s,_netdev,nofail 0 0
+[CODE]

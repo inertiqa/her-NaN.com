@@ -1,0 +1,5 @@
+* fixed the freezing on the linux maschine (master system)
+
+i was sure that [master system] (lenovo thinkcentre m710q) giving out-of-the-blue freezes had some cpu-related issue, find enough willpower to swap again the 2400ge with the stock A10-9700e and sure enough, after two days of uptime, the freezes went away, good thing is the 2400ge was dirty cheap (came with some bent pins anyway that had to straigthen with x-acto care...) anyway, another 50e if i want to max it, and you want to spend fast since in a week EU will increase taxes on aliexp again (good luck finding anything for sale here)
+
+is there a need for a 4c 8t cpu on a purely code writting machine?, hardly

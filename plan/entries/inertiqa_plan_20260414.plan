@@ -1,0 +1,8 @@
+zxelda-uoc v3
+
+* draw the dungeon entrance
+* logic and positioning of where you enter / exit from the map to the dungeon and back
+* tutorial cycled the walking animation nonstop, now it only fires on keypresses
+* octo enemy: chases you
+* hitboxes: enemy can kill you
+* sword attack for the hero

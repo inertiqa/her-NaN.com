@@ -1,0 +1,5 @@
+zxelda-uoc v13 - final
+
+* pusheable blocks
+* pusheable block around dng_e2 // ID64 prevents you to rush the dungeon, you have to work around the block into some other rooms
+* spike hazard, placed on the corners of the screen, they rush horizontally or vertically to the player if the player gets close to its cell, work in horizontal verical pairs

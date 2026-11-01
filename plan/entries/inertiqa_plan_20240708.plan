@@ -1,0 +1,57 @@
+tar cheatsheet:
+
+! files or directories cannot be aded to compressed .tar.gz or .tar.bz2. also cannot be verified
+
+== CREATE ==
+options:
+-c  create
+-v  verbose progress
+-z  zip with gz 
+-j  zip with bz2
+-f  filename
+
+>> oneliner without compression
+tar -cvf allOldStuff.tar old-folder/
+
+>> oneliner compressed
+tar -cvzf allOldStuff.tar.gz old-folder/
+
+
+== ADD ==
+-- directory --
+tar -rvf allOldStuff.tar example/
+
+-- file --
+tar -rvf allOldStuff.tar example.jpg
+
+
+== EXTRACT ==
+-- everything --
+tar -xvf allOldStuff.tar
+
+>> different directory
+tar -xvf allOldStuff.tar -C /home/another-folder/
+
+-- some --
+>> uncompressed
+tar -xvf allOldStuff.tar example.sh
+
+>> compressed
+tar -zxvf allOldStuff.tar.gz example.sh
+
+-- selected files --
+tar -xvf allOldStuff.tar "file1.sh" "file2.sh"
+
+-- filtered --
+tar -xvf allOldStuff.tar --wildcards '*.jpg'
+
+
+== VIEW ==
+tar -tvf allOldStuff.tar
+
+
+== VERIFY ==
+tar -tvf allOldStuff.tar
+
+-- verify size --
+tar -czf - allOldStuff.tar | wc -c

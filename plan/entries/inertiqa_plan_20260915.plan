@@ -1,0 +1,3 @@
+added support for vial, and problems begins, you can't code by hand the combos if vial is going to take care of them, with so much change of source code and reflashing i got bored of losing the combos and re-entering them in the gui, i leave it for later date to add them at the very end, also fixed things with the trilayer directive
+
+also fixed transparent keys in the keymap for all layers except QWERTY, separated lot of the code into different files, i also get into a very long debugging session where, after implementing color change to indicate the caps lock, the entire keyboard hangs on the adjustment layer activation, turns out the power consumed by the whole system with maximum led brightness equals 3.4A, it melts itself

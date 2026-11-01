@@ -1,0 +1,7 @@
+as the webpage became more involved (not much) lots of parts now require SIMD (single change, lots of updates), i'm in the process of creating a lua static site generator that will do it for me, must explore also already made ssg's, but since my page is pretty much custom-made per-page, maybe this approach it's better suited anyway
+
+also i've finished the setup of my desk, get rid of almost everything but the tech and placed a second e-waste monitor, now i have dual everything, one side [ultron] win10 and the other [zekkei0] debian (with the corne), i've started to port the website (still unfinished here and there), to the static generator, the lua setup and luarocks was a breeze, also for now i'm using the i7 vaio [zekkei0] for the task, great piece of hardware, must investigate more why the previous main linux (thinkcentre m715q) [master system] plain freezes at random, clearly a hardware issue
+
+so put the [master system] on hold and drop the computestick m5 [mu-th-ur] inplace as server, so far so good, already had installed debian cli (smart boi), tomorrow will start to slowly setup the network and a little homeserver, probably will host the static site on codeberg anyway and try to implement some docker api here (visitor counter perhaps)
+
+despite this, still wasted most of the day again on one of the last stupid and again pure theoretical uni assignment, this purgatory cannot end soon enough

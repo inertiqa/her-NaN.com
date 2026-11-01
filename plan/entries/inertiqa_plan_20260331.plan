@@ -1,0 +1,5 @@
+zxelda-uoc v1
+
+* critical gameplay element: onscreen change at the borders
+* state changes: menu -> gameplay -> menu
+* first sprites drawn, including hero

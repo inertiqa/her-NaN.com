@@ -1,0 +1,60 @@
+non-breaking $HOME user directories to external drive:
+
+why:
+
+- non-breaking changes: If you move you entire $HOME directory to external drive/partition, if the external brokes (or not present), linux will not boot.
+- $HOME directories are symbolic links to whatever directories you point them to
+- no need for hide anything with dots .beforeTheName nor .hidden file hacks
+- tested on ubuntu / mint
+
+====
+
+create in $HOME/.config/ a user-dirs.conf file and edit with the following entry:
+
+[UserDirs]
+enabled=False
+
+this will prevent any system overwrite of the $HOME/.config/user-dirs.dirs file to default state
+
+check that $HOME/.config/user-dirs.dirs file contents are:
+
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOCUMENTS_DIR="$HOME/Documents"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_MUSIC_DIR="$HOME/Music"
+XDG_PICTURES_DIR="$HOME/Pictures"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+XDG_REPOSITORIES_DIR="$HOME/Repositories"
+XDG_TEMPLATES_DIR="$HOME/Templates"
+XDG_VIDEOS_DIR="$HOME/Videos"
+
+edit permissions of file to readonly (just in case):
+
+chmod 444 ~/.config/user-dirs.dirs
+
+====
+
+in your $HOME directories, change the user directories to symbolic links, pointing whenever you want them to be (generally an external drive)
+
+you external drive is always mounted on: /media/userName/diskName
+
+- delete one of the directories 
+- create a symbolic link with the same name, pointing to the external directories with the following command:
+
+!! BE SURE YOU SAVED STORED INFORMATION INSIDE HOME/DIRECTORIES BEFORE DELETING !!
+
+rm -r ~/Desktop
+ln -s /media/userName/diskName/Desktop ~/Desktop
+
+first argument on the second command is the route where the destination /directories are mounted on the filesystem, second argument is the origin /directory
+
+(find handy bash script to automate task here)
+https://github.com/inertiqa/dot-files/blob/master/homeMigration.sh
+
+do it for all user generated directories and reboot, now every user generated directories inside $HOME/ are symbolic links to the external drive directories with the same names
+
+- all commands on user directories works as expected
+- if you delete/lose linux, all userdata will be saved (are stored on another drive)
+- if the external drive is not present/broken, linux will normally boot into the user (but with broken $HOME/userDirectories links)
+
+be happy

@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@media (min-width:64rem) {
+	main {
+		font-size:3rem;
+		letter-spacing:-0.05rem;
+		line-height:3.6rem;
+	}
+}
+
+p {
+	margin-bottom:0;
+}

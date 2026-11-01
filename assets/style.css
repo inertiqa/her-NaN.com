@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /*base 10 units*/
+    --text-color: rgb(32 32 32);
+    --bg-color: rgb(237 237 237);
+}
+
+html.dark {
+    --text-color: rgb(237 237 237);
+    --bg-color: rgb(32 32 32);
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.33s, color 0.33s;
+}
+
+body.dark {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* three rows, sticky footer */
+.layout {
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* three columns, max-width 640px */
+.layout > * {
+    display: grid;
+    grid-template-columns: auto minmax(auto, 64rem) auto;
+    align-self: start;
+}
+
+/* everything always inside column 2 */
+.layout > * > * {
+    grid-column: 2;
+}
+
+.plan > main {
+    margin: 2.5rem 0 3.5rem 0;
+}
+
+footer {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    padding:0;
+}
+
+footer li {
+    list-style-type: none;
+    margin-right: 1rem;
+}
+
+footer li:last-of-type {
+    margin-right: 0;
+}
+
+/* ===== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* back to the index */
+header h1 a {
+    margin-right:1rem;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--bg-color);
+    background-color: dodgerblue;
+    padding: 0 0.33rem;
+    -webkit-animation: colorRotator 30s infinite linear;
+    animation: colorRotator 30s infinite linear;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[href^="http"]::after {
+    content: "↗"; margin-left: 0.15em;
+}
+
+html.dark a {
+    color: var(--bg-color);
+}
+
+.skyEmoji {
+    margin-left: 2rem;
+}
+
+@keyframes colorRotator {
+    0%, 100% {filter: hue-rotate(0deg)}
+    50% {filter: hue-rotate(360deg)}
+}
+
+@-webkit-keyframes colorRotator {
+    0%, 100% {-webkit-filter: hue-rotate(0deg)}
+    50% {-webkit-filter: hue-rotate(360deg)}
+}
+
+@media (min-width:64rem) {
+    header {
+        padding-top:9rem;
+    }
+
+    footer {
+        padding-bottom:9rem;
+    }
+}

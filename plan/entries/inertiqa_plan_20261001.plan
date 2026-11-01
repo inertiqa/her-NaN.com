@@ -1,0 +1,25 @@
+today a good day to reflecte on the current state of things
+
+i think a good about me page is good enough, but even personal traits can be uninteresting (i keep finding sites where the owner tries to turn himself as uninsteresting as possible)
+
+thinking about all my years of restoring old maschines, there's a very definite goal of having an ancient piece of hardware around
+
+games
+
+you will not use such amount of iron for anything mildy related to anything useful, you'll use your phone for that, you hoard a p!!! for whatever game it can run that you are fond of
+
+background animations, mouse interactions, yes they spice you page up, but i believe is not enough, so if people cannot find anything interesting about you, at least make 'em play, probably it's the only way to grow attachment
+
+people can get nostalgic to loading screens on the spectrum, talk about the power of gaming repetition
+
+i tried to embellish the text with all kind of crazy ideas, unfortunately canvas elements are a very separated pieces of the DOM, and basically what you do on a browser don't transfer cleanly onto a canvas element, also you cannot place anything on top of the content, it cannot be, so a canvas it's pretty much relegated to be a background, there's really no other way around
+
+this morning i had the idea of making the (background) waves sensible to the mouse pointer going over them, that trick turned out nice, slowly realized that i can turn the page into something else, something that makes even old tech desirable
+
+a game to play, and yes i'm aware this is spiralling out of control, as usual
+
+if i remove the background waves, i have a blank page with text on it, and color links sprinked around, so i think a nice goal is just to touch the color blocks and make them dissapear, forcing people to navigate around the texts, that way now i can force people to remember something about landing here, and if i want to encourage repetition, timed runs and a leaderboard are the way, probably i made a mental connection to ecco the dolphin on the master system that i remember playing it long time ago
+
+one thing that i had it planned is that i wanted to create different phrases and create the page from them at random, so every time you visit texts are not the same, i've read that pixi can send and receive events from the DOM, so theoretically you could play around with ecco, and the moment you touch a colored link, you should be able to style it as 'visibility:hidden', making it interactive
+
+pixi can have a series of invisible blocks on his canvas, in the same place of the links and check for collisions to make it work, but if the text and the links should appear at random, that's gonna be a problem, still cooking
