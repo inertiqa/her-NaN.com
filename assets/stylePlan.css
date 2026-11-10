@@ -40,6 +40,7 @@ summary::-webkit-details-marker {
 }
 
 .plain {
+  font-size: 1.4rem;
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }

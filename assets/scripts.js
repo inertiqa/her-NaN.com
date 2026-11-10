@@ -62,13 +62,20 @@ function randomNerd(count) {
     let text = '';
 
     const nerd = [
-        'and I\'m a total nerd',
+        'I\'m a total nerd',
         'also world top three in SSFIV playing <a href="https://youtu.be/DrjXqBEfn8Q" title="myself destroying some scrub online" target="_blank">Juri</a> <img src="assets/chibiJuri.svg" title="chibi-Juri!"/>',
-        'And the last thing on the log is: <a href="/plan/" title="last entry: main css for" target="_self">main css for</a> (<span data-uid="2026-10-31T23:45:48+02:00"></span>)',
+        'the last thing on the log is: <a href="/plan/" title="last entry: general downsize of" target="_self">general downsize of</a> (<span data-uid="2026-11-10T11:36:07+01:00"></span>)',
     ];
 
     for (let i = 0; i < count; i++) {
-        text += nerd.splice(Math.floor(Math.random() * nerd.length), 1)[0];
+        let item = nerd.splice(Math.floor(Math.random() * nerd.length), 1)[0];
+
+        if (i === 0) {
+            item = item.charAt(0).toUpperCase() + item.slice(1);
+        }
+
+        text += item;
+    
         if (i < count - 2) {
             text += ', ';
         } else if (i < count - 1) {
